@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {
+  useState,
+  createContext,
+  useMemo
+} from 'react';
+import TodoApp from './pages/TodoApp';
+import Login from './pages/Login';
+
+export const LoginContext = createContext({
+  info: '',
+  setinfo: () => {},
+});
+
+
 
 function App() {
+  const [info, setinfo] = useState(false);
+  const value = useMemo(
+    () => ({ info, setinfo }), 
+    [info]
+  );
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LoginContext.Provider value={value}>
+        {info ? <TodoApp /> : <Login /> }
+      </LoginContext.Provider>
+    
     </div>
   );
 }

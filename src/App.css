@@ -11,6 +11,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+  .custom{
+    animation: 1 ease  forwards opacityfrom;
+  }
 }
 
 .App-header {
@@ -35,4 +38,131 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container-logo {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.black {
+  background-color: #000;
+}
+.division {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  width: 45%;
+}
+
+.container_welcome {
+  width: 100%;
+  margin: 0 auto;
+}
+.button-container {
+  justify-content: flex-end;
+  margin: 15px 0;
+}
+
+.movil_alert{
+  position:absolute;
+  z-index: 6;
+  bottom: 25%;
+  right: 10%;
+}
+
+@keyframes opacityfrom {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.custom {  
+  /* This section calls the slideInFromLeft animation we defined above */
+  opacity:0;
+ 
+  width:100%;
+  height: 100vh;
+  overflow-y: scroll;
+  /* background: #333; */
+  padding: 30px;
+}
+
+@keyframes fade {
+  0%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+  }
+}
+
+.content{
+  padding: 30px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;
+  overflow-y: auto;
+  gap: 15px;
+}
+
+.content-pag{
+  display:flex;
+  justify-content:center;
+}
+.card-size{
+  width: 30%;
+}
+
+.imgHotel{
+  height:170px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content-star{
+  display:flex;
+  justify-content:space-around;
+  align-items:center
+}
+
+.content-activites{
+  margin-top:15px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center
+}
+
+.pagination{
+  padding-top:10px;
+}
+
+.imageHotel{
+  height:300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.loader{
+  margin:auto;background:#fff;display:block;
+}
+
+.rooms {
+  display:flex;
+  flex-direction:column;
+}
+
+.rooms i {
+  margin: 10px 0;
 }
